@@ -14,10 +14,10 @@ namespace Angular_Doodle.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        [Route("CreateToken")]
+        [Route("Login")]
         [HttpPost]
         [AllowAnonymous]
-        public IActionResult CreateToken(LoginModel login)
+        public IActionResult Login(LoginModel login)
         {
             if (login.Username == "Admin" && login.Password == "Pass")
             {
