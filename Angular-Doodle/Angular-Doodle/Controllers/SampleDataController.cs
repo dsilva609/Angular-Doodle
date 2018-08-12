@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -7,6 +6,7 @@ using System.Linq;
 
 namespace Angular_Doodle.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     public class SampleDataController : Controller
     {
@@ -15,9 +15,7 @@ namespace Angular_Doodle.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        [HttpGet("[action]")]
-        [Route("WeatherForecasts")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpGet, Route("WeatherForecasts")]
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
             var rng = new Random();
