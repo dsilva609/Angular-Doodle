@@ -1,0 +1,27 @@
+<form class="form-register" #registrationForm="ngForm" (ngSubmit)="register(registrationForm)">
+  <div class="container-fluid">
+    <h2 class="form-registration-heading">Register</h2>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" ngModel class="form-control" required autofocus />
+
+    <br/>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" ngModel class="form-control" required />
+
+    <br/>
+
+    <label for="passwordConfirm">Confirm Password</label>
+    <input type="password" id="passwordConfirm" name="passwordConfirm" ngModel  class="form-control" required />
+
+    <br/>
+
+    <label for="displayName">Display Name</label>
+    <input type="text" id="displayName" name="displayName" ngModel class="form-control"/>
+
+    <br/>
+
+    <button class="btn btn-primary btn-block" type="submit">Register</button>
+  </div>
+</form>
